@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   # delete("/sessions/:id", {:controller => "sessions", :action => "destroy"})
   get("/login", {:controller => "sessions", :action => "new"})
   get("/logout", {:controller => "sessions", :action => "destroy"})
-
+  # no sessions data table --> 
+  
   # Landing page (aka root route)
   # get("/", {:controller => "", :action => ""})
 end
