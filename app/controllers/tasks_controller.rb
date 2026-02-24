@@ -1,11 +1,14 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.all
+    #@tasks_user = Task.where({@tasks["user_id"] => session["user_id"]})
+
   end
 
   def create
     @task = Task.new
     @task["description"] = params["description"]
+    @tasks["user_id"] = session["user_id"]
     @task.save
     redirect_to "/tasks"
   end

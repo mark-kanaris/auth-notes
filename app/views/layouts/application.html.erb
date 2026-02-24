@@ -13,15 +13,21 @@
     <p>
       <!-- if no user logged-in, display signup and login links -->
       <!-- else, if user logged-in, display user name and logout link -->
+      <% if session["user_id"] == nil %>
+
       <a href="/users/new">Sign Up</a>
-      |
       <a href="/login">Login</a>
-      |
+      <% else %>
+    
       <a href="/logout">Logout</a>
+      <% end %>
     </p>
 
     <p>
       <%= flash["notice"] %>
+      <%= session["user_id"] %>
+
+      
     </p>
 
     <%= yield %>
